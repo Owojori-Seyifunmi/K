@@ -81,7 +81,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5V357DTT');</script>
-<!-- End Google Tag Manager -->
 
 <style>
 :root {
@@ -333,18 +332,81 @@ h4 { font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; }
 
 /* ─── PORTFOLIO ─── */
 .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.portfolio-item { position: relative; overflow: hidden; cursor: none; background: var(--soft-grey); }
+
+/* portfolio-item: relative container, overflow hidden, cursor auto so clicks work */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--soft-grey);
+  cursor: auto;            /* ← allow normal pointer so links are clickable */
+}
 .portfolio-item:first-child { grid-column: 1 / -1; }
+
 .portfolio-img-frame { position: relative; overflow: hidden; padding-bottom: 60%; }
 .portfolio-item:first-child .portfolio-img-frame { padding-bottom: 45%; }
-.portfolio-img-frame iframe { position: absolute; inset: 0; width: 250%; height: 250%; transform: scale(0.4); transform-origin: top left; border: none; pointer-events: none; }
-.portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%); display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; opacity: 0; transition: opacity 0.4s var(--ease-out); }
-.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+/* iframe is purely decorative — no pointer events */
+.portfolio-img-frame iframe {
+  position: absolute; inset: 0;
+  width: 250%; height: 250%;
+  transform: scale(0.4);
+  transform-origin: top left;
+  border: none;
+  pointer-events: none;      /* ← iframe never intercepts clicks */
+}
+
+/* overlay: hidden by default, no pointer events until hover */
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0) 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  opacity: 0;
+  pointer-events: none;      /* ← invisible = unclickable */
+  transition: opacity 0.4s var(--ease-out);
+  z-index: 2;
+}
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+  pointer-events: all;       /* ← visible = clickable */
+}
+
 .portfolio-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
 .portfolio-name { font-size: 22px; font-weight: 500; color: var(--white); margin-bottom: 12px; }
-.portfolio-link { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+
+/* The visit link — sits inside the overlay which is z-index 2 on hover */
+.portfolio-link {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;           /* ← show pointer so user knows it's clickable */
+  position: relative;
+  z-index: 3;                /* ← above the overlay */
+}
 .portfolio-link:hover { color: var(--gold); }
-.portfolio-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 24px; background: var(--white); border-top: 4px solid var(--maroon); }
+
+/* label bar sits at bottom, below the overlay on z-index */
+.portfolio-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px 24px;
+  background: var(--white);
+  border-top: 4px solid var(--maroon);
+  z-index: 1;                /* ← below the hover overlay */
+  transition: transform 0.4s var(--ease-out);
+}
+.portfolio-item:hover .portfolio-label {
+  transform: translateY(100%); /* ← slide the white label out when hovering so overlay is fully visible */
+}
 .portfolio-label-name { font-size: 16px; font-weight: 600; color: var(--black); }
 .portfolio-label-tag { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); }
 
@@ -733,6 +795,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="suptitle mil-up">Our Work</div>
     <h2 class="mil-up mil-up-d1" style="margin-bottom:60px;">Portfolio <span class="thin">Highlights</span></h2>
     <div class="portfolio-grid">
+
       <div class="portfolio-item mil-up">
         <div class="portfolio-img-frame">
           <iframe src="https://thedigitalmotionlab.com/" scrolling="no" loading="lazy"></iframe>
@@ -740,13 +803,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-overlay">
           <div class="portfolio-tag">Digital Agency</div>
           <div class="portfolio-name">The Digital Motion Lab</div>
-          <a href="https://thedigitalmotionlab.com/" target="_blank" class="portfolio-link">Visit Live Site ↗</a>
+          <a href="https://thedigitalmotionlab.com/" target="_blank" rel="noopener" class="portfolio-link">Visit Live Site ↗</a>
         </div>
         <div class="portfolio-label">
           <div class="portfolio-label-name">The Digital Motion Lab</div>
           <div class="portfolio-label-tag">Web Design &amp; Development</div>
         </div>
       </div>
+
       <div class="portfolio-item mil-up mil-up-d1">
         <div class="portfolio-img-frame">
           <iframe src="https://litdcic.com/" scrolling="no" loading="lazy"></iframe>
@@ -754,13 +818,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-overlay">
           <div class="portfolio-tag">Community Interest Company</div>
           <div class="portfolio-name">LITD C.I.C</div>
-          <a href="https://litdcic.com/" target="_blank" class="portfolio-link">Visit Live Site ↗</a>
+          <a href="https://litdcic.com/" target="_blank" rel="noopener" class="portfolio-link">Visit Live Site ↗</a>
         </div>
         <div class="portfolio-label">
           <div class="portfolio-label-name">LITD C.I.C</div>
           <div class="portfolio-label-tag">Non-Profit Web Development</div>
         </div>
       </div>
+
       <div class="portfolio-item mil-up mil-up-d2">
         <div class="portfolio-img-frame">
           <iframe src="https://silksinvestments.co.uk/" scrolling="no" loading="lazy"></iframe>
@@ -768,13 +833,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-overlay">
           <div class="portfolio-tag">Property Investment</div>
           <div class="portfolio-name">Silks Investments</div>
-          <a href="https://silksinvestments.co.uk/" target="_blank" class="portfolio-link">Visit Live Site ↗</a>
+          <a href="https://silksinvestments.co.uk/" target="_blank" rel="noopener" class="portfolio-link">Visit Live Site ↗</a>
         </div>
         <div class="portfolio-label">
           <div class="portfolio-label-name">Silks Investments</div>
           <div class="portfolio-label-tag">Property Investment Platform</div>
         </div>
       </div>
+
       <div class="portfolio-item mil-up mil-up-d3">
         <div class="portfolio-img-frame">
           <iframe src="https://calienvironmentsupportservices.ltd/" scrolling="no" loading="lazy"></iframe>
@@ -782,13 +848,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-overlay">
           <div class="portfolio-tag">Environmental Services</div>
           <div class="portfolio-name">Cali Environment Support Services</div>
-          <a href="https://calienvironmentsupportservices.ltd/" target="_blank" class="portfolio-link">Visit Live Site ↗</a>
+          <a href="https://calienvironmentsupportservices.ltd/" target="_blank" rel="noopener" class="portfolio-link">Visit Live Site ↗</a>
         </div>
         <div class="portfolio-label">
           <div class="portfolio-label-name">Cali Environment Support</div>
           <div class="portfolio-label-tag">Environmental Services</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1068,7 +1135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 KYDOS Digital. All Rights Reserved.</div>
+      <div class="footer-copy">© 2026 Kydos Digital. All Rights Reserved.</div>
       <div class="footer-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -1126,7 +1193,7 @@ window.addEventListener('load', () => {
   }, 1100);
 });
 
-/* ─── CURSOR — dot + ball matching all other pages ─── */
+/* ─── CURSOR ─── */
 const ball = document.getElementById('cursorBall');
 const dot  = document.getElementById('cursorDot');
 let mx = 0, my = 0, bx = 0, by = 0;
@@ -1143,7 +1210,7 @@ if (ball && dot) {
     ball.style.top  = by + 'px';
     requestAnimationFrame(tick);
   })();
-  document.querySelectorAll('a, button, .package-card, .service-card, .testimonial-card, .portfolio-item, .faq-question').forEach(el => {
+  document.querySelectorAll('a, button, .package-card, .service-card, .testimonial-card, .faq-question').forEach(el => {
     el.addEventListener('mouseenter', () => { ball.classList.add('expanded'); dot.classList.add('expanded'); });
     el.addEventListener('mouseleave', () => { ball.classList.remove('expanded'); dot.classList.remove('expanded'); });
   });
@@ -1177,7 +1244,6 @@ function updateFrame() {
       if (r.top <= 60 && r.bottom >= 60) isLight = true;
     }
   });
-  // grey-section covers portfolio
   document.querySelectorAll('.grey-section').forEach(el => {
     const r = el.getBoundingClientRect();
     if (r.top <= 60 && r.bottom >= 60) isLight = true;
@@ -1231,7 +1297,6 @@ document.getElementById('formSubmit').addEventListener('click', function () {
   const website = (document.getElementById('f-website').value || '').trim();
   const message = (document.getElementById('f-message').value || '').trim();
 
-  // Validate required fields
   let valid = true;
   ['f-name', 'f-message'].forEach(id => {
     const el = document.getElementById(id);
