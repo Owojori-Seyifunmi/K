@@ -789,7 +789,7 @@ h4 { font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; }
 .pricing-header { text-align: center; margin-bottom: 64px; }
 .pricing-header h2 { margin-bottom: 16px; }
 .pricing-header p { font-size: 17px; color: var(--text-mid); max-width: 620px; margin: 0 auto; line-height: 1.7; }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
 .price-card {
   border: 1px solid rgba(0,0,0,0.08); position: relative;
   overflow: hidden; display: flex; flex-direction: column;
@@ -1011,6 +1011,7 @@ footer {
   .services-grid { grid-template-columns: 1fr; }
   .values-layout { grid-template-columns: 1fr; gap: 48px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-form-wrap { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
@@ -1384,75 +1385,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="pricing">
   <div class="container">
     <div class="pricing-header">
-      <div class="suptitle centered mil-up">Our Pricing</div>
+      <div class="suptitle centered mil-up">Social Media Pricing</div>
       <h2 class="mil-up mil-up-d1">Simple, <span class="thin">Transparent</span> Plans</h2>
-      <p class="mil-up mil-up-d2">Three tiers built around what your business actually needs, from brand presence to full lead generation. Minimum 3-month commitment. No hidden fees.</p>
+      <p class="mil-up mil-up-d2">Four social media packages built around the level of visibility, lead generation, automation, and growth support your business needs.</p>
     </div>
+
     <div class="pricing-grid">
-      <!-- Visibility -->
+      <!-- Starter -->
       <div class="price-card mil-up">
         <div class="price-header">
-          <div class="price-name">Visibility</div>
+          <div class="price-name">Starter</div>
           <p class="price-tagline">For businesses that want a consistent, professional social media presence</p>
           <div class="price-amount"><sup>£</sup>165<sub>/month</sub></div>
         </div>
         <div class="price-body">
           <ul class="price-features">
-            <li>Instagram, Facebook, TikTok</li>
-            <li>5 posts per week</li>
-            <li>Graphic design and video editing</li>
+            <li>Instagram, Facebook and TikTok</li>
+            <li>3 posts per week</li>
+            <li>Professional graphic design and video editing</li>
             <li>Content calendar and strategy</li>
-            <li>Scheduling and posting</li>
-            <li>Monthly content summary</li>
+            <li>Stories 2 to 3 times per week</li>
           </ul>
           <a href="#contact" class="view-details">Get Started</a>
         </div>
       </div>
-      <!-- Pipeline (featured) -->
+
+      <!-- Visibility -->
       <div class="price-card featured mil-up mil-up-d1">
         <div class="price-header">
           <div class="popular-badge">Most Popular</div>
+          <div class="price-name">Visibility</div>
+          <p class="price-tagline">For businesses ready to build stronger visibility and engagement</p>
+          <div class="price-amount"><sup>£</sup>275<sub>/month</sub></div>
+        </div>
+        <div class="price-body">
+          <ul class="price-features">
+            <li>5 posts per week</li>
+            <li>Full page setup and optimisation</li>
+            <li>Professional graphic design and video editing</li>
+            <li>Content calendar and strategy</li>
+            <li>Community management</li>
+            <li>Stories 3 to 5 times per week</li>
+            <li>Monthly report</li>
+          </ul>
+          <a href="#contact" class="view-details">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Pipeline -->
+      <div class="price-card mil-up mil-up-d2">
+        <div class="price-header">
           <div class="price-name">Pipeline</div>
-          <p class="price-tagline">For businesses ready to generate consistent leads and enquiries</p>
-          <div class="price-amount"><sup>£</sup>350<sub>/month</sub></div>
+          <p class="price-tagline">For businesses that want social media connected to lead generation</p>
+          <div class="price-amount"><sup>£</sup>455<sub>/month</sub></div>
         </div>
         <div class="price-body">
           <ul class="price-features">
             <li>Everything in Visibility</li>
-            <li>Story posting</li>
-            <li>Community management</li>
             <li>Paid ads management <em style="font-style:italic;opacity:0.85;">(ad spend provided by client)</em></li>
-            <li>CRM setup and management on LUWADOS</li>
+            <li>CRM setup and management</li>
             <li>Instant lead automation, every enquiry triggers an immediate follow-up</li>
             <li>Monthly performance report</li>
           </ul>
-          <!-- TODO: replace #contact with the discovery call booking page URL when ready -->
           <a href="#contact" class="view-details">Book a Discovery Call</a>
         </div>
       </div>
+
       <!-- Partner -->
-      <div class="price-card mil-up mil-up-d2">
+      <div class="price-card mil-up mil-up-d3">
         <div class="price-header">
           <div class="price-name">Partner</div>
-          <p class="price-tagline">For businesses ready to build a full client acquisition system</p>
-          <div class="price-amount"><sup>£</sup>550<sub>/month</sub></div>
+          <p class="price-tagline">For businesses ready to build a complete client acquisition system</p>
+          <div class="price-amount"><sup>£</sup>655<sub>/month</sub></div>
         </div>
         <div class="price-body">
           <ul class="price-features">
             <li>Everything in Pipeline</li>
-            <li>Dedicated landing page, built to convert</li>
+            <li>Dedicated landing page built to convert</li>
             <li>Full lead nurture sequences with multi-step email and SMS follow-up</li>
             <li>Advanced CRM pipeline management</li>
-            <li>Website audit identifying conversion gaps on your existing site</li>
-            <li>Bi-weekly strategy calls</li>
+            <li>Website audit identifying conversion gaps</li>
           </ul>
-          <!-- TODO: replace #contact with the discovery call booking page URL when ready -->
           <a href="#contact" class="view-details">Book a Discovery Call</a>
         </div>
       </div>
     </div>
+
     <div class="pricing-disclaimer mil-up">
-      <p>Paid advertising spend is provided separately by the client on Pipeline and Partner plans. We recommend a minimum of £300/month in ad spend for meaningful results. All plans require a minimum 3-month commitment.</p>
+      <p>Paid advertising spend is provided separately by the client on Pipeline and Partner plans. All plans are designed to help your business move from visibility to structured lead generation.</p>
       <p class="bespoke">Need a bespoke package? <a href="#contact">Let's talk →</a></p>
     </div>
   </div>
