@@ -329,6 +329,7 @@ h4 { font-size: clamp(17px, 2vw, 22px); font-weight: 500; }
 .dark-section .category-header-text p { color: rgba(255,255,255,0.45); }
 
 /* ─── PRICE CARDS ─── */
+.cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
 .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
 
@@ -543,12 +544,14 @@ footer { background: var(--black); padding: 80px 0 40px; }
   .hamburger { display: flex; }
   .frame-label, .back-to-top { display: none; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  .cards-4 { grid-template-columns: 1fr 1fr; }
   .cards-3 { grid-template-columns: 1fr 1fr; }
   .maintenance-card { grid-template-columns: 1fr; }
   .maintenance-right { padding: 40px 60px; }
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 900px) {
+  .cards-4 { grid-template-columns: 1fr; }
   .cards-3 { grid-template-columns: 1fr; }
   .cards-2 { grid-template-columns: 1fr; }
   .addons-grid { grid-template-columns: 1fr 1fr; }
@@ -718,15 +721,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="category-header-text">
         <div class="suptitle">Pricing Plans</div>
         <h2>Social Media <span class="thin">Management</span></h2>
-        <p>Three tiers built around what your business actually needs, from brand presence to full lead generation. Minimum 3-month commitment.</p>
+        <p>Four flexible plans built around consistent content, visibility, lead generation, and full client acquisition support.</p>
       </div>
     </div>
-    <div class="cards-3">
-      <!-- Visibility -->
+    <div class="cards-4">
+      <!-- Starter -->
       <div class="p-card mil-up">
         <div class="p-card-head">
-          <div class="p-card-name">Visibility</div>
-          <p class="p-card-tagline">For businesses that want a consistent, professional social media presence</p>
+          <div class="p-card-name">Starter</div>
+          <p class="p-card-tagline">For businesses that need a clean, consistent social media presence</p>
           <div class="p-price-wrap">
             <span class="p-price-sym">£</span>
             <span class="p-price">165</span>
@@ -736,69 +739,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="p-card-body">
           <ul class="p-features">
             <li>Instagram, Facebook, TikTok</li>
-            <li>5 posts per week</li>
-            <li>Graphic design and video editing</li>
+            <li>3 posts per week</li>
+            <li>Professional graphic design and video editing</li>
             <li>Content calendar and strategy</li>
-            <li>Scheduling and posting</li>
-            <li>Monthly content summary</li>
+            <li>Stories 2 to 3 times per week</li>
           </ul>
           <a href="#contact-section" class="p-cta">Get Started</a>
         </div>
       </div>
-      <!-- Pipeline (featured) -->
-      <div class="p-card featured mil-up mil-up-d1">
+
+      <!-- Visibility -->
+      <div class="p-card mil-up mil-up-d1">
+        <div class="p-card-head">
+          <div class="p-card-name">Visibility</div>
+          <p class="p-card-tagline">For brands that want stronger reach, optimisation, and community presence</p>
+          <div class="p-price-wrap">
+            <span class="p-price-sym">£</span>
+            <span class="p-price">275</span>
+            <span class="p-price-period">/month</span>
+          </div>
+        </div>
+        <div class="p-card-body">
+          <ul class="p-features">
+            <li>5 posts per week</li>
+            <li>Full page setup and optimisation</li>
+            <li>Professional graphic design and video editing</li>
+            <li>Content calendar and strategy</li>
+            <li>Community management</li>
+            <li>Stories 3 to 5 times per week</li>
+            <li>Monthly report</li>
+          </ul>
+          <a href="#contact-section" class="p-cta">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Pipeline -->
+      <div class="p-card featured mil-up mil-up-d2">
         <div class="p-card-head">
           <div class="popular-tag">Most Popular</div>
           <div class="p-card-name">Pipeline</div>
-          <p class="p-card-tagline">For businesses ready to generate consistent leads and enquiries</p>
+          <p class="p-card-tagline">For businesses ready to turn attention into leads and enquiries</p>
           <div class="p-price-wrap">
             <span class="p-price-sym">£</span>
-            <span class="p-price">350</span>
+            <span class="p-price">455</span>
             <span class="p-price-period">/month</span>
           </div>
         </div>
         <div class="p-card-body">
           <ul class="p-features">
             <li>Everything in Visibility</li>
-            <li>Story posting</li>
-            <li>Community management</li>
             <li>Paid ads management <em style="font-style:italic;opacity:0.85;">(ad spend provided by client)</em></li>
-            <li>CRM setup and management on LUWADOS</li>
+            <li>CRM setup and management</li>
             <li>Instant lead automation, every enquiry triggers an immediate follow-up</li>
             <li>Monthly performance report</li>
           </ul>
-          <!-- TODO: replace #contact-section with the discovery call booking page URL when ready -->
           <a href="#contact-section" class="p-cta">Book a Discovery Call</a>
         </div>
       </div>
+
       <!-- Partner -->
-      <div class="p-card mil-up mil-up-d2">
+      <div class="p-card mil-up mil-up-d3">
         <div class="p-card-head">
           <div class="p-card-name">Partner</div>
-          <p class="p-card-tagline">For businesses ready to build a full client acquisition system</p>
+          <p class="p-card-tagline">For businesses that want a full lead and conversion system</p>
           <div class="p-price-wrap">
             <span class="p-price-sym">£</span>
-            <span class="p-price">550</span>
+            <span class="p-price">655</span>
             <span class="p-price-period">/month</span>
           </div>
         </div>
         <div class="p-card-body">
           <ul class="p-features">
             <li>Everything in Pipeline</li>
-            <li>Dedicated landing page, built to convert</li>
+            <li>Dedicated landing page built to convert</li>
             <li>Full lead nurture sequences with multi-step email and SMS follow-up</li>
             <li>Advanced CRM pipeline management</li>
-            <li>Website audit identifying conversion gaps on your existing site</li>
-            <li>Bi-weekly strategy calls</li>
+            <li>Website audit identifying conversion gaps</li>
           </ul>
-          <!-- TODO: replace #contact-section with the discovery call booking page URL when ready -->
           <a href="#contact-section" class="p-cta">Book a Discovery Call</a>
         </div>
       </div>
     </div>
-    <!-- Disclaimer beneath plans -->
     <div class="plans-disclaimer mil-up">
-      <p>Paid advertising spend is provided separately by the client on Pipeline and Partner plans. We recommend a minimum of £300/month in ad spend for meaningful results. All plans require a minimum 3-month commitment.</p>
+      <p>Paid advertising spend is provided separately by the client on Pipeline and Partner plans. All plans are built to support consistent visibility, stronger follow-up, and clearer growth reporting.</p>
     </div>
   </div>
 </div>
