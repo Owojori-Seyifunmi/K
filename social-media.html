@@ -68,9 +68,10 @@
   "description": "Professional social media management for UK businesses. Packages from £165/month covering Instagram, Facebook, TikTok, YouTube and LinkedIn.",
   "areaServed": "GB",
   "offers": [
-    {"@type":"Offer","name":"Starter Plan","price":"165","priceCurrency":"GBP","description":"12 posts per month across Instagram, Facebook and TikTok"},
-    {"@type":"Offer","name":"Growth Plan","price":"285","priceCurrency":"GBP","description":"20 posts per month across up to 4 platforms"},
-    {"@type":"Offer","name":"Scale Plan","price":"425","priceCurrency":"GBP","description":"28 posts per month across up to 5 platforms"}
+    {"@type":"Offer","name":"Starter Plan","price":"165","priceCurrency":"GBP","description":"Instagram, Facebook and TikTok. 3 posts per week, professional graphic design and video editing, content calendar and strategy, stories 2 to 3 times per week."},
+    {"@type":"Offer","name":"Visibility Plan","price":"255","priceCurrency":"GBP","description":"5 posts per week, full page setup and optimisation, professional graphic design and video editing, content calendar and strategy, community management, stories 3 to 5 times per week and monthly report."},
+    {"@type":"Offer","name":"Pipeline Plan","price":"455","priceCurrency":"GBP","description":"Everything in Visibility, paid ads management, CRM setup and management, instant lead automation and monthly performance report."},
+    {"@type":"Offer","name":"Partner Plan","price":"655","priceCurrency":"GBP","description":"Everything in Pipeline, dedicated landing page, full lead nurture sequences, advanced CRM pipeline management and website audit."}
   ]
 }
 </script>
@@ -332,7 +333,7 @@ h4 { font-size: clamp(17px, 2vw, 22px); font-weight: 500; }
 .packages-intro h2 { margin-bottom: 16px; }
 .packages-intro p { font-size: 17px; color: var(--text-mid); max-width: 600px; margin: 0 auto; line-height: 1.75; }
 
-.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; align-items: start; }
+.pkg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; align-items: start; }
 
 .pkg-card {
   background: var(--white);
@@ -614,12 +615,13 @@ footer { background: var(--black); padding: 80px 0 40px; }
   .frame-label, .back-to-top { display: none; }
   .hero-platforms { display: none; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
-  .pkg-grid { grid-template-columns: 1fr; }
+  .pkg-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr 1fr; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-layout { grid-template-columns: 1fr; gap: 48px; }
 }
 @media (max-width: 900px) {
+  .pkg-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .addons-grid { grid-template-columns: 1fr 1fr; }
   .menu-overlay { grid-template-columns: 1fr; }
@@ -769,16 +771,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="packages-intro">
       <div class="suptitle center mil-up">Pricing Plans</div>
       <h2 class="mil-up mil-up-d1">Social Media Management <span class="thin">Packages</span></h2>
-      <p class="mil-up mil-up-d2">Professional social media management for businesses that want to stay visible and consistent online.</p>
+      <p class="mil-up mil-up-d2">Professional social media management for businesses that want consistent visibility, stronger engagement, and a clear lead follow-up system.</p>
     </div>
     <div class="pkg-grid">
 
       <!-- STARTER -->
       <div class="pkg-card mil-up">
         <div class="pkg-head">
-          <div class="pkg-plan-label">Starter · Visibility Plan</div>
+          <div class="pkg-plan-label">Social Media</div>
           <div class="pkg-name">Starter</div>
-          <div class="pkg-best-for">Best for: Small businesses that want a consistent social media presence.</div>
+          <div class="pkg-best-for">Best for: Small businesses that want a clean, consistent social media presence.</div>
           <div class="pkg-price">
             <span class="pkg-price-sym">£</span>
             <span class="pkg-price-num">165</span>
@@ -798,89 +800,110 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="pkg-feature-group">
             <div class="pkg-feature-group-label">What you get</div>
             <ul class="pkg-features">
-              <li>3 posts per week (12 per month): 2 Reels/TikToks + 1 carousel or image post</li>
-              <li>Full page setup and optimisation across all three platforms</li>
-              <li>Professional content writing, graphic design, and video editing</li>
-              <li>Platform-specific captions, CTAs, and hashtags</li>
-              <li>Stories posted 2–3 times per week</li>
-              <li>Comment responses on posts up to 3 times per week (you handle DMs)</li>
-              <li>Monthly performance summary</li>
+              <li>Instagram, Facebook and TikTok management</li>
+              <li>3 posts per week</li>
+              <li>Professional graphic design and video editing</li>
+              <li>Content calendar and strategy</li>
+              <li>Stories 2 to 3 times per week</li>
             </ul>
           </div>
           <a href="#contact-section" class="pkg-cta">Get Started</a>
         </div>
       </div>
 
-      <!-- GROWTH (featured) -->
+      <!-- VISIBILITY -->
       <div class="pkg-card featured mil-up mil-up-d1">
         <div class="pkg-head">
           <div class="popular-tag">Popular</div>
-          <div class="pkg-plan-label">Growth</div>
-          <div class="pkg-name">Growth</div>
-          <div class="pkg-best-for">Best for: Businesses that want steady growth and stronger engagement.</div>
+          <div class="pkg-plan-label">Social Media</div>
+          <div class="pkg-name">Visibility</div>
+          <div class="pkg-best-for">Best for: Businesses that want stronger visibility, better consistency, and community support.</div>
           <div class="pkg-price">
             <span class="pkg-price-sym">£</span>
-            <span class="pkg-price-num">285</span>
+            <span class="pkg-price-num">275</span>
             <span class="pkg-price-period">/month</span>
           </div>
           <div class="pkg-platforms">
             <span class="pkg-platform-label">Platforms:</span>
-            <span class="pkg-platform-text">Your choice of up to 4 platforms</span>
+            <span class="pkg-platform-text">Instagram, Facebook, TikTok</span>
           </div>
         </div>
         <div class="pkg-body">
           <div class="pkg-feature-group">
             <div class="pkg-feature-group-label">What you get</div>
             <ul class="pkg-features">
-              <li>5 posts per week (20 per month): 3 Reels/TikToks + 2 carousels or image posts</li>
-              <li>Everything in Starter, plus:</li>
-              <li>Dedicated social media manager</li>
-              <li>Content strategy aligned with your business goals</li>
-              <li>Enhanced hashtag research and content planning</li>
-              <li>Trend monitoring and implementation</li>
-              <li>Stories posted 3–5 times per week</li>
-              <li>Monthly strategy call</li>
-              <li>Bi-weekly performance insights with optimisation recommendations</li>
-              <li>Comment responses within 24 hours (you handle DMs)</li>
+              <li>5 posts per week</li>
+              <li>Full page setup and optimisation</li>
+              <li>Professional graphic design and video editing</li>
+              <li>Content calendar and strategy</li>
+              <li>Community management</li>
+              <li>Stories 3 to 5 times per week</li>
+              <li>Monthly report</li>
             </ul>
           </div>
           <a href="#contact-section" class="pkg-cta">Get Started</a>
         </div>
       </div>
 
-      <!-- SCALE -->
+      <!-- PIPELINE -->
       <div class="pkg-card mil-up mil-up-d2">
         <div class="pkg-head">
-          <div class="pkg-plan-label">Scale · Full Presence</div>
-          <div class="pkg-name">Scale</div>
-          <div class="pkg-best-for">Best for: Businesses that want maximum visibility across multiple platforms.</div>
+          <div class="pkg-plan-label">Social Media + Lead System</div>
+          <div class="pkg-name">Pipeline</div>
+          <div class="pkg-best-for">Best for: Businesses that want content, ads, CRM setup, and fast lead follow-up.</div>
           <div class="pkg-price">
             <span class="pkg-price-sym">£</span>
-            <span class="pkg-price-num">425</span>
+            <span class="pkg-price-num">455</span>
             <span class="pkg-price-period">/month</span>
           </div>
           <div class="pkg-platforms">
-            <span class="pkg-platform-label">Platforms:</span>
-            <span class="pkg-platform-text">Your choice of up to 5 platforms</span>
+            <span class="pkg-platform-label">Includes:</span>
+            <span class="pkg-platform-text">Visibility + Ads + CRM</span>
           </div>
         </div>
         <div class="pkg-body">
           <div class="pkg-feature-group">
             <div class="pkg-feature-group-label">What you get</div>
             <ul class="pkg-features">
-              <li>7 posts per week (28 per month): 4 Reels/TikToks + 3 carousels or image posts</li>
-              <li>Everything in Growth, plus:</li>
-              <li>Dedicated account manager</li>
-              <li>Priority support and faster turnaround</li>
-              <li>Multi-platform optimisation and distribution</li>
-              <li>Daily story posting</li>
-              <li>Monthly performance report with deeper insights</li>
-              <li>Quarterly content refresh based on trends and performance</li>
-              <li>Daily comment monitoring and responses (you handle DMs)</li>
-              <li>Priority revisions under fair use</li>
+              <li>Everything in Visibility</li>
+              <li>Paid ads management <em style="font-style:italic;opacity:0.85;">(ad spend provided by client)</em></li>
+              <li>CRM setup and management</li>
+              <li>Instant lead automation, every enquiry triggers an immediate follow-up</li>
+              <li>Monthly performance report</li>
             </ul>
           </div>
-          <a href="#contact-section" class="pkg-cta">Get Started</a>
+          <a href="#contact-section" class="pkg-cta">Book a Discovery Call</a>
+        </div>
+      </div>
+
+      <!-- PARTNER -->
+      <div class="pkg-card mil-up mil-up-d3">
+        <div class="pkg-head">
+          <div class="pkg-plan-label">Full Growth Partner</div>
+          <div class="pkg-name">Partner</div>
+          <div class="pkg-best-for">Best for: Businesses ready for a complete client acquisition and nurture system.</div>
+          <div class="pkg-price">
+            <span class="pkg-price-sym">£</span>
+            <span class="pkg-price-num">655</span>
+            <span class="pkg-price-period">/month</span>
+          </div>
+          <div class="pkg-platforms">
+            <span class="pkg-platform-label">Includes:</span>
+            <span class="pkg-platform-text">Pipeline + Landing Page + Nurture</span>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feature-group">
+            <div class="pkg-feature-group-label">What you get</div>
+            <ul class="pkg-features">
+              <li>Everything in Pipeline</li>
+              <li>Dedicated landing page built to convert</li>
+              <li>Full lead nurture sequences with multi-step email and SMS follow-up</li>
+              <li>Advanced CRM pipeline management</li>
+              <li>Website audit identifying conversion gaps</li>
+            </ul>
+          </div>
+          <a href="#contact-section" class="pkg-cta">Book a Discovery Call</a>
         </div>
       </div>
 
